@@ -1,8 +1,8 @@
 package net.esquizomods.desafioeclipse;
 
+import net.esquizomods.desafioeclipse.block.ModBlocks;
+import net.esquizomods.desafioeclipse.item.ModItem;
 import net.fabricmc.api.ModInitializer;
-
-import net.minecraft.resources.ResourceLocation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,14 +13,7 @@ public class DesafioEclipse implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
-	}
-
-	public static ResourceLocation id(String path) {
-		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+		ModItem.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
